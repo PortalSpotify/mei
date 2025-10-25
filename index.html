@@ -1309,7 +1309,7 @@
             }
 
             try {
-                const response = await fetch(`https://receitaws.com.br/v1/cnpj/${cnpj}`, {
+                const response = await fetch(`https://brasilapi.com.br/api/cnpj/v1/${cnpj}`, {
                     signal: AbortSignal.timeout(5000)
                 });
 
@@ -1321,7 +1321,7 @@
 
                 await new Promise(resolve => setTimeout(resolve, 400));
 
-                if (data.status === 'OK') {
+                if (data.cnpj) {
                     cnpjData = data;
                     displayCNPJInfo(data);
                     cnpjInput.classList.add('success');
@@ -1350,11 +1350,11 @@
 
             const infoItems = [
                 { label: 'CNPJ', value: data.cnpj },
-                { label: 'Razão Social', value: data.nome },
-                { label: 'Nome Fantasia', value: data.fantasia || '-' },},{find:
-                { label: 'Atividade Principal', value: data.atividade_principal[0].text || '-' },
-                { label: 'Situação', value: data.situacao || '-' },
-                { label: 'Tipo', value: data.natureza_juridica || '-' }
+                { label: 'Razão Social', value: data.razao_social },
+                { label: 'Nome Fantasia', value: data.nome_fantasia || '-' },
+                { label: 'Atividade Principal', value: data.cnae_fiscal_descricao || '-' },
+                { label: 'Situação', value: data.situacao_cadastral || '-' },
+                { label: 'Tipo', value: data.natureza_juridica_descricao || '-' }
             ];
 
             const htmlContent = infoItems.map(item => `
